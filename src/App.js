@@ -1,5 +1,5 @@
 import React from 'react';
-import { MemoryRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import BookList from './components/BookList';
 import Categories from './components/Categories';
@@ -8,14 +8,14 @@ import FormAddBook from './components/FormAddBook';
 
 function App() {
   return (
-    <MemoryRouter>
+    <BrowserRouter>
       <NavBar />
       <Routes>
         <Route path="/" element={<BookList />} />
         <Route path="/categories" element={<Categories />} />
       </Routes>
       <FormAddBook />
-    </MemoryRouter>
+    </BrowserRouter>
   );
 }
 
