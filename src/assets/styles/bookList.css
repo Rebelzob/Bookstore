@@ -1,0 +1,6 @@
+.book-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 30px;
+}
