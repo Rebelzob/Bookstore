@@ -2,25 +2,28 @@ import PropTypes from 'prop-types';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import '../assets/styles/bookDetails.css';
+import DeleteBook from './DeleteBook';
 
-function BookDetails({ book }) {
+function BookDetails({
+  id, title, author, category, chapter, percentage,
+}) {
   return (
     <section className="book-element--container">
       <div className="book-info">
-        <p>{book.category}</p>
-        <p>{book.title}</p>
-        <p>{book.author}</p>
+        <p>{category}</p>
+        <p>{title}</p>
+        <p>{author}</p>
         <div className="buttons">
-          <button id={book.id} type="button">Comments</button>
+          <button id={id} type="button">Comments</button>
           <span className="separator">|</span>
-          <button id={book.id} type="button">Remove</button>
+          <DeleteBook id={id} />
           <span className="separator">|</span>
-          <button id={book.id} type="button">Edit</button>
+          <button id={id} type="button">Edit</button>
         </div>
       </div>
       <div>
         <div className="percentage-container">
-          <CircularProgressbar className="circular-progressbar" value={book.percentage} text={`${book.percentage} %`} />
+          <CircularProgressbar className="circular-progressbar" value={percentage} text={`${percentage} %`} />
           <p className="completed">Completed</p>
         </div>
       </div>
@@ -29,23 +32,27 @@ function BookDetails({ book }) {
           Current Chapter
         </p>
         <p>
-          {book.chapter}
+          {chapter}
         </p>
-        <button id={book.id} type="button">Update Progress</button>
+        <button id={id} type="button">Update Progress</button>
       </div>
     </section>
   );
 }
 
+BookDetails.defaultProps = {
+  chapter: 2,
+  percentage: 65,
+  category: 'Action',
+};
+
 BookDetails.propTypes = {
-  book: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
-    chapter: PropTypes.number.isRequired,
-    percentage: PropTypes.number.isRequired,
-  }).isRequired,
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  category: PropTypes.string,
+  chapter: PropTypes.number,
+  percentage: PropTypes.number,
 };
 
 export default BookDetails;
