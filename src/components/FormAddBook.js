@@ -5,6 +5,7 @@ import '../assets/styles/formAddBook.css';
 function FormAddBook() {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
+  const [category, setCategory] = useState('');
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
@@ -14,14 +15,20 @@ function FormAddBook() {
     setAuthor(e.target.value);
   };
 
-  const handleAddBook = (e) => {
-    e.preventDefault();
+  const handleCategoryChange = (e) => {
+    setCategory(e.target.value);
+  };
+
+  const handleAddBook = () => {
+    setTitle('');
+    setAuthor('');
+    setCategory('');
   };
 
   return (
     <div className="addBook-container">
       <h2>Add a new book</h2>
-      <form className="form-container" onSubmit={handleAddBook}>
+      <form className="form-container">
         <input
           type="text"
           id="title"
@@ -40,7 +47,21 @@ function FormAddBook() {
           onChange={handleAuthorChange}
           value={author}
         />
-        <AddBook title={title} author={author} />
+        <input
+          type="text"
+          id="category"
+          name="category"
+          placeholder="Category"
+          required
+          onChange={handleCategoryChange}
+          value={category}
+        />
+        <AddBook
+          title={title}
+          author={author}
+          category={category}
+          onBookAdded={handleAddBook}
+        />
       </form>
     </div>
   );
