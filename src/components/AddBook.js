@@ -2,22 +2,28 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addBook } from '../redux/books/booksSlice';
+import { addBookAsync } from '../redux/books/booksSlice';
 
-function AddBook({ title, author }) {
+function AddBook({
+  title, author, category, onBookAdded,
+}) {
   const dispatch = useDispatch();
 
   const handlerAddBook = () => {
-    const newBook = {
-      id: uuidv4(),
-      title,
-      author,
-    };
-    dispatch(addBook(newBook));
+    if (title !== '' && author !== '' && category !== '') {
+      const newBook = {
+        item_id: uuidv4(),
+        title: title || 'Title',
+        author: author || 'Author',
+        category: category || 'Category',
+      };
+      onBookAdded();
+      dispatch(addBookAsync(newBook));
+    }
   };
 
   return (
-    <button type="submit" onClick={handlerAddBook}>
+    <button type="button" onClick={handlerAddBook}>
       Add Book
     </button>
   );
@@ -26,6 +32,8 @@ function AddBook({ title, author }) {
 AddBook.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+  onBookAdded: PropTypes.func.isRequired,
 };
 
 export default AddBook;
