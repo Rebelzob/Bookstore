@@ -1,12 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/booksSlice';
 
-function DeleteBook({ id }) {
-  const dispatch = useDispatch();
+function DeleteBook({ id, onDelete }) {
   const handleRemoveBook = () => {
-    dispatch(removeBook(id));
+    onDelete(id);
   };
   return (
     <button type="button" onClick={handleRemoveBook}>
@@ -17,6 +14,7 @@ function DeleteBook({ id }) {
 
 DeleteBook.propTypes = {
   id: PropTypes.string.isRequired,
+  onDelete: PropTypes.func.isRequired,
 };
 
 export default DeleteBook;
