@@ -7,7 +7,7 @@ function DeleteBook({ id, onDelete }) {
   };
   return (
     <button type="button" onClick={handleRemoveBook}>
-      Delete Book
+      Delete
     </button>
   );
 }
