@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useRef } from 'react';
 import { fetchBooksAsync } from '../redux/books/booksSlice';
 import BookDetails from './BookDetails';
+import FormAddBook from './FormAddBook';
 import '../assets/styles/bookList.css';
 
 function BookList() {
@@ -14,24 +15,28 @@ function BookList() {
   }, [dispatch]);
 
   return (
-    <div className="book-container">
-      {Object.entries(books).map(([id, bookArray]) => {
-        const book = bookArray[0];
-        idRef.current = id;
+    <main>
+      <section className="book-container">
+        {Object.entries(books).map(([id, bookArray]) => {
+          const book = bookArray[0];
+          idRef.current = id;
 
-        return (
-          <BookDetails
-            id={idRef.current}
-            key={idRef.current}
-            title={book.title}
-            author={book.author}
-            category={book.category}
-            chapter={book.chapter}
-            percentage={book.percentage}
-          />
-        );
-      })}
-    </div>
+          return (
+            <BookDetails
+              id={idRef.current}
+              key={idRef.current}
+              title={book.title}
+              author={book.author}
+              category={book.category}
+              chapter={book.chapter}
+              percentage={book.percentage}
+            />
+          );
+        })}
+      </section>
+      <span className="form-separator" />
+      <FormAddBook />
+    </main>
   );
 }
 
