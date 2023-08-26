@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { addBookAsync } from '../redux/books/booksSlice';
+import '../assets/styles/addBook.css';
 
 function AddBook({
   title, author, category, onBookAdded,
@@ -23,7 +24,7 @@ function AddBook({
   };
 
   return (
-    <button type="button" onClick={handlerAddBook}>
+    <button className="add-btn" type="button" onClick={handlerAddBook}>
       Add Book
     </button>
   );
