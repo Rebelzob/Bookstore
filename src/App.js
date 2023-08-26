@@ -4,7 +4,6 @@ import './App.css';
 import BookList from './components/BookList';
 import Categories from './components/Categories';
 import NavBar from './components/NavBar';
-import FormAddBook from './components/FormAddBook';
 
 function App() {
   return (
@@ -14,7 +13,6 @@ function App() {
         <Route path="/" element={<BookList />} />
         <Route path="/categories" element={<Categories />} />
       </Routes>
-      <FormAddBook />
     </BrowserRouter>
   );
 }
