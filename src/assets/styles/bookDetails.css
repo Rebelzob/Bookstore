@@ -1,13 +1,169 @@
 .book-element--container {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 100%;
+  background-color: #fff;
+  padding: 1.6rem;
+  border: 1px solid #e8e8e8;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100%;
+  width: 33.3%;
+}
+
+.category {
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #888;
+  padding-bottom: 0.5rem;
+}
+
+.subtitle {
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: -0.2px;
+  font-weight: bold;
+}
+
+.author {
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+  color: #4386bf;
+  padding: 5px 0 1rem 0;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 2.5rem;
+  gap: 1rem;
+}
+
+.buttons button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 2rem;
+  border: none;
+  background-color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #4386bf;
+  cursor: pointer;
+}
+
+.button-separator {
+  display: flex;
+  width: 1px;
+  height: 2rem;
+  background-color: #e8e8e8;
+  padding: 1px;
+  align-items: center;
+}
+
+.percentage-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33.3%;
+  height: 4.5rem;
+  gap: 1rem;
 }
 
 .circular-progressbar {
-  width: 100px;
-  height: 100px;
+  width: 4.5rem;
+  height: 4.5rem;
+}
+
+.percentage-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 4.5rem;
+  height: 4.5rem;
+  gap: 0.5rem;
+}
+
+.percentage {
+  display: flex;
+  width: 2.5rem;
+  height: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.9px;
+  text-align: center;
+  color: #121212;
+}
+
+.completed {
+  font-family: "Roboto", sans-serif;
+  color: #888;
+}
+
+.section-separator {
+  width: 3px;
+  height: 5rem;
+  background-color: #e8e8e8;
+}
+
+.update {
+  width: 33.3%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 3.6rem;
+}
+
+.update-title {
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: #888;
+  padding-bottom: 0.5rem;
+}
+
+.chapter-p {
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 1.1rem;
+  padding-bottom: 1rem;
+}
+
+.update button {
+  display: flex;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #fff;
+  background-color: #0290ff;
+  border-radius: 3px;
+  width: 11.5rem;
+  height: 2rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
 }

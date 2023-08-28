@@ -27,7 +27,7 @@
 
 
 # 📖 Book Store  <a name="React"></a>
-**To Do List** is a project under microverse module 3 block 2 aimed to apply the knowledge of React and Redux to build a simple book store.
+**Bookstore** is a project under microverse module 3 block 2 aimed to apply the knowledge of React and Redux to build a simple book store.
 ## 🛠 Built With <a name="build-with"></a>
 
 **React, Redux**

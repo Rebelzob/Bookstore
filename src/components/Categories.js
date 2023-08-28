@@ -1,7 +1,9 @@
+import '../assets/styles/categories.css';
+
 function Categories() {
   return (
     <div>
-      <h2>Coming soon!</h2>
+      <h2 className="title-categories">🚧 Under construction 🚧</h2>
     </div>
   );
 }
